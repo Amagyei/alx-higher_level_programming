@@ -10,12 +10,15 @@ class Rectangle:
         self.height = height
     
     def __str__(self):
-        result = ""
-        for h in range(self.height):
-            for w in range(self.width):
-                result+='#'
-            result+='\n'
-        return result
+        if self.width  == 0 or self.height == 0:
+            return ""
+        else:
+            result = ""
+            for h in range(self.height):
+                for w in range(self.width):
+                    result+='#'
+                result+='\n'
+            return result
 
     @property
     def width(self):
