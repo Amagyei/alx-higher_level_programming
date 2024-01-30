@@ -10,16 +10,12 @@ class Rectangle:
         self.height = height
     
     def __str__(self):
+        result = ""
         if self.width  == 0 or self.height == 0:
             return ""
         else:
             result = ""
-            for h in range(self.height):
-                for w in range(self.width):
-                    result+='#'
-                result+='\n'
-            return result
-    
+            return '\n'.join(['#' * self.width  for j in range(self.height)])
     def __repr__(self):
         return "Rectangle({},{})".format(self.width, self.height)
 
