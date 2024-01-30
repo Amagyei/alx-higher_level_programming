@@ -61,8 +61,10 @@ class Rectangle:
         else:
             return 2 * self.height + 2 * self.width
     
+    @classmethod    
     def square(cls, size=0):
-        return cls(size,size)
+        r = cls(size, size)
+        return r
 
     def bigger_or_equal(rect_1, rect_2):
         if not isinstance(rect_1, Rectangle):
