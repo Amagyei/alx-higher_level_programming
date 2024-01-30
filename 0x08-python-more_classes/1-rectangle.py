@@ -28,8 +28,8 @@ class Rectangle:
         """getter"""
         return self.__height
     
-    @height.setter
-    def heigth(self, value):
+     @height.setter
+    def height(self, value):
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value < 0:
