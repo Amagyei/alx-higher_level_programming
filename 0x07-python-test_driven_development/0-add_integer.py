@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 # 0-add_integer.py
 """Defines an integer addition function."""
 
@@ -16,3 +17,14 @@ def add_integer(a, b=98):
     if ((not isinstance(b, int) and not isinstance(b, float))):
         raise TypeError("b must be an integer")
     return (int(a) + int(b))
+=======
+
+def add_integer(a, b=98):
+    for item in (a, b):
+        if type(item) not in (int, float):
+            raise TypeError('{} must be an integer'.format(item))
+
+    result = a + b
+    return result
+
+>>>>>>> refs/remotes/origin/main
