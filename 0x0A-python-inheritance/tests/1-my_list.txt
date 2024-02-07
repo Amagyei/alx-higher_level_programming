@@ -1,0 +1,29 @@
+"""
+    Implements sorted printing for the built-in list class.
+
+    >>> ml = MyList([3, 1, 2])
+    >>> ml.print_sorted()
+    [1, 2, 3]
+
+    >>> ml = MyList([3, 1, 2])
+    >>> ml.append(4)
+    >>> ml.print_sorted()
+    [1, 2, 3, 4]
+
+    >>> ml = MyList([])
+    >>> ml.print_sorted()
+    []
+
+    >>> ml = MyList([5])
+    >>> ml.print_sorted()
+    [5]
+
+    >>> ml = MyList([5, 5, 5, 5])
+    >>> ml.print_sorted()
+    [5, 5, 5, 5]
+
+    >>> ml = MyList([1, 2, 3, 4])
+    >>> ml.print_sorted()
+    [1, 2, 3, 4]
+    """
+
