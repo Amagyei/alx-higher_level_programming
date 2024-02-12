@@ -71,8 +71,15 @@ class Rectangle(Base):
     def area(self):
         return self.__height * self.__width
     
+    
     def display(self):
-        print('\n'.join(['#' * self.__width for j in range(self.__height)]))
+        # Print y offset
+        for _ in range(self.__y):
+            print()
+
+        # Print rectangle with x offset
+        for _ in range(self.__height):
+            print(' ' * self.__x + '#' * self.__width)
 
 
     def __str__(self):
