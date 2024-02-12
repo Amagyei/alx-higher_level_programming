@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ 
-this module is based on the base class
+this  is based on the base class Base and is inherits from the base class 
 """
 
 from models.base import Base
