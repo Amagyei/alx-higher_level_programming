@@ -10,6 +10,9 @@ class Rectangle(Base):
         self.height = height
         self.__x = x
         self.__y = y
+
+    def __str__(self):
+        return f'[{self.__class__.__name__}] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}'
     
 
     @property
@@ -81,6 +84,12 @@ class Rectangle(Base):
         for _ in range(self.__height):
             print(' ' * self.__x + '#' * self.__width)
 
+    
+    def update(self, *args):
+        # update the rectangle
+        defaults = (self.id, self.width, self.height, self.x, self.y)
+        values = args + defaults[len(args):]
+        self.id, self.width, self.height, self.x, self.y = values
 
-    def __str__(self):
-        return f'[{self.__class__.__name__}] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}'
+
+    
