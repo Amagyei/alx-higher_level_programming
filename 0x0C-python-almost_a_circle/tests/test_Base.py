@@ -1,9 +1,15 @@
 #!/usr/bin/python3
 import unittest
 from models.base import Base
+""" 
+this module is based on the base class
+"""
 
 
 class TestBase(unittest.TestCase):
+    """ 
+    this module is based on the base class
+    """
 
     def test_init_with_id(self):
         obj = Base()

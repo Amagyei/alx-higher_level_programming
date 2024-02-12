@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ 
 this module is based on the base class
-
 """
 
 from models.base import Base
