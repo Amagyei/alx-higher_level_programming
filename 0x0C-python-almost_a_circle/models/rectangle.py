@@ -85,11 +85,14 @@ class Rectangle(Base):
             print(' ' * self.__x + '#' * self.__width)
 
     
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         # update the rectangle
-        defaults = (self.id, self.width, self.height, self.x, self.y)
-        values = args + defaults[len(args):]
-        self.id, self.width, self.height, self.x, self.y = values
+        if args:
+            attrs = ['id', 'width', 'height', 'x', 'y']
+            for attr, value in zip(attrs, args):
+                setattr(self, attr, value)
+        for attr, value in kwargs.items():
+            setattr(self, attr, value)
 
 
     
