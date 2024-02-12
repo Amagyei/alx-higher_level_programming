@@ -1,9 +1,11 @@
 #!/usr/bin/python3
+""" this module is based on the base class"""
 
 from models.base import Base
 import inspect
 
 class Rectangle(Base):
+    """ this module is based on the base class """
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         self.width = width
