@@ -36,10 +36,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """Set/get the width of the Rectangle."""
         return self.__width
     
     @width.setter
     def width(self, value):
+        """Set/get the width of the Rectangle."""
         if not isinstance(value, int):
             raise TypeError('{} must be an integer'.format(inspect.currentframe().f_code.co_name))
         if value <= 0:
@@ -49,10 +51,12 @@ class Rectangle(Base):
     
     @property
     def height(self):
+        """Set/get the height of the Rectangle."""
         return self.__height
     
     @height.setter
     def height(self, value):
+        """Set/get the height of the Rectangle."""
         if not isinstance(value, int):
             raise TypeError('{} must be an integer'.format(inspect.currentframe().f_code.co_name))
         if value <= 0:
@@ -62,10 +66,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """Set/get the x of the Rectangle."""
         return self.__x
     
     @x.setter
     def x(self, value):
+        """Set/get the x of the Rectangle."""
         if not isinstance(value, int):
             self.__x = None
             raise TypeError('{} must be an integer'.format(inspect.currentframe().f_code.co_name))
@@ -77,10 +83,12 @@ class Rectangle(Base):
     
     @property
     def y(self):
+        """Set/get the y of the Rectangle."""
         return self.__y
     
     @y.setter
     def y(self, value):
+        """Set/get the y of the Rectangle."""
         if not isinstance(value, int):
             self.__y = None
             raise TypeError('y must be an integer')
@@ -91,10 +99,12 @@ class Rectangle(Base):
             self.__y = value
 
     def area(self):
+        """Set/get the area of the Rectangle."""
         return self.__height * self.__width
     
     
     def display(self):
+        """display the area of the Rectangle."""
         # Print y offset
         for _ in range(self.__y):
             print()
@@ -105,6 +115,7 @@ class Rectangle(Base):
 
     
     def update(self, *args, **kwargs):
+        """Supdate the parameters of the Rectangle."""
         # update the rectangle
         if args:
             attrs = ['id', 'width', 'height', 'x', 'y']
