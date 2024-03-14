@@ -18,3 +18,14 @@ class Square(Rectangle):
         """
         super().__init__(size, size, x, y, id)
 
+    @property
+    def size(self):
+        """ the size getter for the class"""
+        return self.size
+    
+    @size.setter
+    def size(self, value):
+        """ the size getter for the class"""
+        self.size = value
+
+
