@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-import mySQLdb
-import sys
-if __name__ = '__main__':
+import MySQLdb
+from sys import argv
+if __name__ == '__main__':
     conn = MySQLdb.connect(
             host ="localhost",
             port = 3306,
@@ -17,9 +17,9 @@ if __name__ = '__main__':
     except MySQLdb.Error:
          try:
             rtn = ("MySQLdb Error")
-        except p:
+         except p:
             rtn = ("MySQLdb Error - IndexError")
-    for i in return:
+    for i in rtn:
         print(i)
     cur.close()
     conn.close()
