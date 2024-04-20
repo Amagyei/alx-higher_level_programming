@@ -12,7 +12,8 @@ if __name__ == '__main__':
             charset='utf8')
     cur = conn.cursor()
     try:
-        stmt = "SELECT * FROM states WHERE name LIKE 'N%' order by id ASC"
+        search_variable = states
+        stmt = "SELECT * FRO {} WHERE name LIKE 'N%' order by id ASC".format(search_variable)
         cur.execute(stmt)
         rtn = cur.fetchall()
     except MySQLdb.Error:
