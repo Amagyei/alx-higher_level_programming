@@ -13,7 +13,15 @@ if __name__ == '__main__':
     cur = conn.cursor()
     try:
         search = argv[4]
-        stmt = "SELECT * FROM cities WHERE state_id LIKE 'N%' order by id ASC"
+        stmt = """
+        SELECT cities.name 
+        FROM cities 
+        WHERE cities.id LIKE BINARY 
+            ( SELECT states.id
+            FROM states 
+            WHERE states.name LIKE BINARY '%s')
+        order by id ASC
+        """
         cur.execute(stmt, (search))
         rtn = cur.fetchall()
     except MySQLdb.Error:
