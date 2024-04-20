@@ -1,26 +1,23 @@
 #!/usr/bin/python3
 """
-    script that lists all State objects, and corresponding City objects,
-    contained in the database hbtn_0e_101_usa
+    script that prints all City objects from the database hbtn_0e_14_usa
 """
 import sys
 from model_state import Base, State
+from model_city import City
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
-from relationship_state import Base, State
-from relationship_city import City
+from sqlalchemy import asc
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format
                            (sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
-    Base.metadata.create_all(engine)
+
     start = sessionmaker()
     start.configure(bind=engine)
     session = start()
-    stmt = session.query(State).order_by(State.id)
-    for i in stmt:
-        print("{:d}: {:s}".format(i.id, i.name))
-        for j in i.cities:
-            print("\t{:d}: {:s}".format(j.id, j.name))
+    stmt = session.query(State, City).join(City).order_by(asc(City.id)).all()
+    for i, j in stmt:
+        print("{:s}: ({:d}) {:s}".format(i.name, j.id, j.name))
     session.close()
