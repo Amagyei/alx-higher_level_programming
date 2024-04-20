@@ -4,17 +4,25 @@ import MySQLdb
 from sys import argv
 if __name__ == '__main__':
     conn = MySQLdb.connect(
-            host="localhost",
-            port=3306,
-            user=argv[1],
-            passwd=argv[2],
-            db=argv[3],
-            charset='utf8')
+        host="localhost",
+        port=3306,
+        user=argv[1],
+        passwd=argv[2],
+        db=argv[3],
+        charset='utf8')
     cur = conn.cursor()
     try:
         search = argv[4]
-        stmt = "SELECT * FROM cities WHERE state_id LIKE 'N%' order by id ASC"
-        cur.execute(stmt,(search,))
+        stmt = """
+        SELECT cities.name 
+        FROM cities 
+        WHERE cities.id LIKE BINARY 
+            ( SELECT states.id
+            FROM states 
+            WHERE states.name LIKE BINARY '%s')
+        order by id ASC
+        """
+        cur.execute(stmt, (search))
         rtn = cur.fetchall()
     except MySQLdb.Error:
         try:
