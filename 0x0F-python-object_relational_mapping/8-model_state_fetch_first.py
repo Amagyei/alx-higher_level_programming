@@ -23,7 +23,7 @@ if __name__ == "__main__":
     stmt = session.query(State).order_by(asc(State.id)).first()
     # if count != 0:
     if stmt:
-        print("{:d}: {:s}".format(stmt.id, stmt.name))  
-    else:    
+        print("{:d}: {:s}".format(stmt.id, stmt.name))
+    else:
         print("Nothing")
     session.close()

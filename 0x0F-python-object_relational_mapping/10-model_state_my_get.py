@@ -18,7 +18,8 @@ if __name__ == "__main__":
     start = sessionmaker()
     start.configure(bind=engine)
     session = start()
-    stmt = session.query(State).filter_by(name=arg).order_by(asc(State.id)).one_or_none()
+    stmt = session.query(State).filter_by(
+        name=arg).order_by(asc(State.id)).one_or_none()
     if stmt:
         print("{:d}".format(stmt.id))
     else:

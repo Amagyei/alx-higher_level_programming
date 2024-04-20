@@ -18,7 +18,8 @@ if __name__ == "__main__":
     start = sessionmaker()
     start.configure(bind=engine)
     session = start()
-    stmt = session.query(State).order_by(asc(State.id)).filter(State.name.ilike('%a%') )
+    stmt = session.query(State).order_by(
+        asc(State.id)).filter(State.name.ilike('%a%'))
 
     print("{:d}: {:s}".format(stmt.id, stmt.name))
 

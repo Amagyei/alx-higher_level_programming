@@ -14,11 +14,11 @@ if __name__ == '__main__':
     try:
         search = argv[4]
         stmt = """
-        SELECT cities.name 
-        FROM cities 
-        WHERE cities.id LIKE BINARY 
+        SELECT cities.name
+        FROM cities
+        WHERE cities.id LIKE BINARY
             ( SELECT states.id
-            FROM states 
+            FROM states
             WHERE states.name LIKE BINARY '%s')
         order by id ASC
         """
