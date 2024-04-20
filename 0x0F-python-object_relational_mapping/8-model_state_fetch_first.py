@@ -18,8 +18,8 @@ if __name__ == "__main__":
     start = sessionmaker()
     start.configure(bind=engine)
     session = start()
-    stmt = session.query(State).order_by(asc(State.id)).all()
+    stmt = session.query(State).order_by(asc(State.id)).first()
 
-    print("{:d}: {:s}".format(stmt[0].id, stmt[0].name))
+    print("{:d}: {:s}".format(stmt.id, stmt.name))
 
     session.close()
