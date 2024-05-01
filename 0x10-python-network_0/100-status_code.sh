@@ -1,3 +1,3 @@
 #!/bin/bash
-# taskes in a s=url sends the body of the request and displays blah blah blah:wq
-curl -s -X GET -w "%{http_code}" -o /dev/null "$1"
+# sends a request to a URL passed as an argument, and displays only the status code of the response
+curl -so /dev/null --write-out "%{http_code}" "$1"
