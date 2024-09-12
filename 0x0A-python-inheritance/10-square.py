@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""10-square.py"""
+"""10-square.py
+"""
 
 Rectangle = __import_('9-rectangle').Rectangle
 
