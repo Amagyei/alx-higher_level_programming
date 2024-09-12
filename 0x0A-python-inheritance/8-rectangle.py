@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""REctangle"""
+"""Rectangle module
+
+This module defines the Rectangle class that inherits from BaseGeometry.
+"""
 
 class Rectangle(BaseGeometry):
     """Rectangle class that inherits from BaseGeometry"""
