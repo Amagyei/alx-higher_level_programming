@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""10-square.py
+"""11-square.py
 """
 
 
@@ -20,5 +20,5 @@ class Square(Rectangle):
         return super().area()
 
     def __str__(self):
-        """ Constructor """
-        return f"[Square} {:d}/{:d}".format(self.__size,self.__size)
+        """Return a string representation of the Square instance."""
+        return f"[Square] {self.__size}/{self.__size}"
