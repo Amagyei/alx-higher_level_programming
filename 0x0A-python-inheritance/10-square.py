@@ -2,16 +2,19 @@
 """10-square.py
 """
 
-Rectangle = __import_('9-rectangle').Rectangle
+
+Rectangle = __import__('9-rectangle').Rectangle
+
 
 class Square(Rectangle):
-    """ inherits the rectagnle class """
+    """ inherits from Rectangle class """
 
     def __init__(self, size):
-        """ init func for the obj"""
-        self.integer_validator = size
-        self.__size = size
+        """ Constructor """
+        if self.integer_validator('size', size):
+            self.__size = size
+        super().__init__(size, size)
 
     def area(self):
-        """ Returns the area"""
-        return size * size
+        """ Returns area of Square object"""
+        return super().area()
