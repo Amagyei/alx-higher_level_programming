@@ -15,7 +15,10 @@ module.exports = class Rectangle {
         }
     }
 
+    double() {
+        
+    }
+
 
 };
-
 
