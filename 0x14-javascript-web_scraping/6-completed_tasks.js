@@ -13,7 +13,7 @@ request(uri, (err, response, body) => {
 
 		const completed = {}
 
-		tasks.forEach(tasks => { 
+		tasks.forEach(task => { 
 			if (completed[task.userId.toString()]) {
 				if (task.completed) {
 					completed[task.userId.toString()]++;
@@ -24,6 +24,6 @@ request(uri, (err, response, body) => {
 				}
 			}
 		});
-		console.log(n)
+		console.log(completed)
 	}
 });
