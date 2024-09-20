@@ -3,15 +3,16 @@ const request = require('request')
 const args = process.argv.slice(2)
 
 const endpoint = 'https://swapi-api.alx-tools.com/api/people/18'
+const uri = args[0]
 
-request(endpoint, (args[0], response, body) => {
+request(uri, (err, response, body) => {
 	if (err) {
 		console.error(err);
 	} else { 
-		const results = JSON.parse.body.results;
+		const results = JSON.parse(body).results;
 		let n = 0;
 
-		resutls.forEach(result => { 
+		results.forEach(result => { 
 			const characters = result.characters;
 
 			characters.forEach(character => {
