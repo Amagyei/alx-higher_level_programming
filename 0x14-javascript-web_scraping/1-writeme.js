@@ -8,7 +8,7 @@ const options = {
 	flag: 'w'
 };
 
-fs.Writefile(args[0], args[1], options, (err) => {
+fs.writeFile(args[0], args[1], options, (err) => {
 	if (err) {
 		console.error(err);
 	}
