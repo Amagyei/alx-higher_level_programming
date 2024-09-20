@@ -10,19 +10,18 @@ const options = {
 };
 
 request(args[0], (err, response, body) => {
+  if (err) {
+    console.error(err);
+  } else {
+    try {
+      const results = JSON.parse(body);
+      fs.writeFile(args[1], JSON.stringify(results), options, err => {
         if (err) {
-                console.error(err);
-        } else {
-                try {
-                    const results = JSON.parse(body);
-                    fs.writeFile(args[1], JSON.stringify(results), options, err => {
-                        if (err) {
-                                console.error(err);
-                        }
-                    });
-                } catch (parseError) {
-                    console.error('Error parsing JSON:', parseError);
-                }
+          console.error(err);
         }
+      });
+    } catch (parseError) {
+      console.error('Error parsing JSON:', parseError);
+    }
+  }
 });
-
