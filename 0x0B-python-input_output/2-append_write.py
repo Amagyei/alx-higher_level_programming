@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ Defines a function that reads a file"""
 
-def write_file(filename="",text=""):
-    """ pprints the contedts of a UTF8 text file to stdout 
+def append_write(filename="",text=""):
+    """Appends a string to the end of a UTF8 text file.
     
     Args:
         filename (str): The name of the file to append to.
